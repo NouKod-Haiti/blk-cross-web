@@ -41,8 +41,8 @@ const SignupForm = () => {
 
                     <Flex direction="row" marginStart="size-2000"  gap="size-250">
                     
-                        <Image src="fblogo.png" alt="Sky" width="size-500" height="size-500"/>
-                        <Image src="google.png" alt="Roof" width="size-500" height="size-500"/>
+                    <Link isQuiet><NavLink to="#"><Image src="fblogo.png" alt="Sky" width="size-500" height="size-500"/></NavLink></Link>
+                    <Link isQuiet><NavLink to="#"><Image src="google.png" alt="Roof" width="size-500" height="size-500"/></NavLink></Link>
                     </Flex>
 
                     <Flex direction="column">

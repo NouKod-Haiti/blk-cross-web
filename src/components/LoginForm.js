@@ -11,6 +11,7 @@ const LoginForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+    
         
     }
 
@@ -25,7 +26,7 @@ const LoginForm = () => {
             <Flex direction="column">
                     
                <Form onSubmit={handleSubmit} width="80%" marginStart="single-line-height" height="80%">
-               <Flex direction="column" gap="size-65" justifyContent="center" marginStart="single-line-height">
+                  <Flex direction="column" gap="size-65" justifyContent="center" marginStart="single-line-height">
                          <View  borderWidth="thin"  marginStart="single-line-height" borderColor="dark"  backgroundColor="gray-100"  >
                             <Image src="#" alt="Sky and roof" height="100%" width="100%"/>
                         </View>
@@ -33,32 +34,32 @@ const LoginForm = () => {
                                Sign in to view your kits!
                         </Text>
                    </Flex>
+                
+                    <Flex direction="row" marginStart="size-2000"  gap="size-250">
+                                                    
+                    <Link isQuiet><NavLink to="#"><Image src="fblogo.png" alt="Sky" width="size-500" height="size-500"/></NavLink></Link>
+                    <Link isQuiet><NavLink to="#"><Image src="google.png" alt="Roof" width="size-500" height="size-500"/></NavLink></Link>
+                    </Flex>
             
-                <Flex direction="row" marginStart="size-2000"  gap="size-250">
-                                                
-                  <Image src="fblogo.png" alt="Sky" width="size-500" height="size-500"/>
-                  <Image src="google.png" alt="Roof" width="size-500" height="size-500"/>
-                </Flex>
-            
-                <Flex direction="column">
-                    <Text marginStart="size-2400">or </Text>
-    
-                    <TextField isRequired id="textfield" label="Email" type="email" placeholder="Email" width="90%" marginStart="single-line-height" value={email} onChange={setEmail}/>
-                    <TextField isRequired id="textfield"  label="Password" type="password"placeholder="Password"  width="90%" marginStart="single-line-height" value={password} onChange={setPassword}/>
-                </Flex>                
+                    <Flex direction="column">
+                        <Text marginStart="size-2400">or </Text>
+        
+                        <TextField isRequired id="textfield" label="Email" type="email" placeholder="Email" width="90%" marginStart="single-line-height" value={email} onChange={setEmail}/>
+                        <TextField isRequired id="textfield"  label="Password" type="password"placeholder="Password"  width="90%" marginStart="single-line-height" value={password} onChange={setPassword}/>
+                    </Flex>                
+                                            
+                    <Flex direction="row">
+                    <Checkbox marginStart="single-line-height" value={selectState} isSelected={selectState} onChange={setSelect}>
+                        Remember me
+                    </Checkbox>
+                    <Link marginStart="size-1200" isQuiet><NavLink to="/recover_password"> Forgot Password?</NavLink></Link>
+                    </Flex>
                                         
-                <Flex direction="row">
-                  <Checkbox marginStart="single-line-height" value={selectState} isSelected={selectState} onChange={setSelect}>
-                      Remember me
-                 </Checkbox>
-                  <Link marginStart="size-1200" isQuiet><NavLink to=""> Forgot Password?</NavLink></Link>
-                </Flex>
-                                        
-                <Grid> 
-                    <Button variant="primary" id="signInButton" type="submit" width="90%" marginStart="single-line-height"> 
-                         SIGN IN
-                    </Button>
-                </Grid>
+                    <Grid> 
+                        <Button variant="primary" id="signInButton" type="submit" width="90%" marginStart="single-line-height"> 
+                            SIGN IN
+                        </Button>
+                    </Grid>
                                         
             </Form>   
 
