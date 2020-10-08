@@ -61,7 +61,7 @@ const SendPasswordReset = () => {
           </Button>
 
           <Link isQuiet>
-            <NavLink to="#">I don't have access to any oh these</NavLink>
+            <NavLink to="#">I don&eapos;t have access to any oh these</NavLink>
           </Link>
         </Form>
       </View>

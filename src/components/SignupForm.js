@@ -142,7 +142,7 @@ const SignupForm = () => {
             </Flex>
 
             <Flex direction="column" marginStart="size-600">
-              <Text>Areas of impact you're interested in</Text>
+              <Text>Areas of impact you&apos;re interested in</Text>
               <Checkbox
                 value="#"
                 isSelected={selectState1}
