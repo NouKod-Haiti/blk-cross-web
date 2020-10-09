@@ -8,7 +8,6 @@ import {
   View,
 } from "@adobe/react-spectrum";
 
-
 const RecoverPassword = () => {
   const [user, setUser] = useState();
 

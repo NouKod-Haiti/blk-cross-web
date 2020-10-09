@@ -145,7 +145,7 @@ const LoginForm = () => {
 
           <Grid>
             <Text justifySelf="center">
-              Don&eapos;t have an account?
+              Don&#39;t have an account?
               <Link isQuiet>
                 <NavLink to="/signup"> Register</NavLink>
               </Link>
