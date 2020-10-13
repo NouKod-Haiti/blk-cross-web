@@ -13,26 +13,10 @@ const RecoverPassword = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    window.location.href = "/send_password_reset";
   };
   return (
     <Grid columns="1fr 2fr 1fr" rows="1fr 2fr" width="100%" height="100%">
-      <View
-        gridColumnStart="1"
-        gridColumnEnd="4"
-        gridRowStart="1"
-        gridRowEnd="2"
-        borderWidth="thin"
-        borderColor="dark"
-        height="70px"
-        padding="size-160"
-      >
-        <View width="50%" marginStart="size-3600">
-          <Text>
-            <h3>Password Reset</h3>
-          </Text>
-        </View>
-      </View>
-
       <View
         gridColumnStart="2"
         gridColumnEnd="3"

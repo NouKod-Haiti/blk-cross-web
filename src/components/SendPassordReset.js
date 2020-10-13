@@ -11,26 +11,14 @@ import {
 } from "@adobe/react-spectrum";
 import { NavLink } from "react-router-dom";
 
+const handleSubmit = (event) => {
+  event.preventDefault();
+  window.location.href = "/success";
+};
+
 const SendPasswordReset = () => {
   return (
     <Grid columns="1fr 2fr 1fr" rows="1fr 2fr" width="100%" height="100%">
-      <View
-        gridColumnStart="1"
-        gridColumnEnd="4"
-        gridRowStart="1"
-        gridRowEnd="2"
-        borderWidth="thin"
-        borderColor="dark"
-        height="70px"
-        padding="size-160"
-      >
-        <View width="50%" marginStart="size-3600">
-          <Text>
-            <h3>Password Reset</h3>
-          </Text>
-        </View>
-      </View>
-
       <View
         gridColumnStart="2"
         gridColumnEnd="3"
@@ -38,9 +26,13 @@ const SendPasswordReset = () => {
         gridRowEnd="3"
         height="100%"
         width="100%"
-        paddingBottom="single-line-height"
       >
-        <Form width="100%" height="100%" marginStart="single-line-height">
+        <Form
+          width="100%"
+          height="100%"
+          marginStart="single-line-height"
+          onSubmit={handleSubmit}
+        >
           <Text>
             <h1>How do you want to reset your password?</h1>
           </Text>

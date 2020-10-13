@@ -28,6 +28,7 @@ const SignupForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    window.location.href = "/success";
   };
 
   return (
