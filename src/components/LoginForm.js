@@ -17,12 +17,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [selectState, setSelect] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
+    setEmail("");
+    setPassword("");
     window.location.href = "/success";
   }
 

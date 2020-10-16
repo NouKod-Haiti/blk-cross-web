@@ -9,7 +9,7 @@ import {
 } from "@adobe/react-spectrum";
 
 const RecoverPassword = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();

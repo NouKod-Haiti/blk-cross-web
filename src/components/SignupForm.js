@@ -17,10 +17,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const SignupForm = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [organization, setOg] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [organization, setOg] = useState("");
   const [selectState1, setSelect1] = useState(false);
   const [selectState2, setSelect2] = useState(false);
   const [selectState3, setSelect3] = useState(false);
@@ -28,6 +28,10 @@ const SignupForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setName("");
+    setEmail("");
+    setPassword("");
+    setOg("");
     window.location.href = "/success";
   };
 
