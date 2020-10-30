@@ -7,6 +7,7 @@ import Signup  from "./users/pages/Signup";
 import Succes from "./users/pages/Succes";
 import RecoverPassword from "./users/pages/RecoverPassword";
 import PasswordReset from "./users/pages/PasswordReset";
+import Home from "./Home";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/login">
               <Login />
             </Route>
             <Route exact path="/signup">

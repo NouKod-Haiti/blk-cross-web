@@ -25,7 +25,7 @@ const SignupForm = (props) => {
         alignItems="center"
       >
          
-         <View width="size-6000" justifySelf="center" marginTop="size-100">
+         <View width="size-6000" justifySelf="center" marginTop="size-400">
             <Header marginStart="size-2400"><h2>Sign Up</h2></Header>
 
             <Form onSubmit={props.handleSubmit} marginStart="single-line-height" marginBottom="size-100">
@@ -94,32 +94,13 @@ const SignupForm = (props) => {
                    
             </Form>
 
-            <Flex direction="column" gap="size-130" marginTop="size-400" marginBottom="size-300">
-            <Text marginStart="size-2400">Or Register with</Text>
-
-            <Flex direction="row" marginStart="size-2400" gap="size-250">
-
-              <Link isQuiet>
-                <NavLink to="#">
-                  <FontAwesomeIcon icon={faFacebook} size="3x" color="blue" />
-                </NavLink>
-              </Link>
-
-              <Link isQuiet>
-                <NavLink to="#">
-                  <FontAwesomeIcon icon={faGoogle} size="3x" color="blue" />
-                </NavLink>
-              </Link>
-
-            </Flex>
            
-         </Flex>
 
          <Flex direction="column">
          <Text marginStart="size-1700">
           Already have an account?
           <Link isQuiet>
-            <NavLink to="/"> Sign in</NavLink>
+            <NavLink to="/login"> Sign in</NavLink>
           </Link>
         </Text>
          </Flex>
