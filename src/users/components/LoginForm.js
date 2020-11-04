@@ -23,7 +23,7 @@ const LoginForm = (props) => {
       height="100%"
       alignItems="center"
     >
-      <View width="size-6000" justifySelf="center" marginTop="size-800">
+      <View justifySelf="center" marginTop="size-800">
         <Header marginStart="size-2400">
           <h2>Sign In</h2>
         </Header>
@@ -38,7 +38,6 @@ const LoginForm = (props) => {
             label="Email"
             type="email"
             placeholder="Email"
-            width="size-5000"
             name="email"
             value={props.email}
             onChange={props.handleChangeEmail}
@@ -49,7 +48,6 @@ const LoginForm = (props) => {
             label="Password"
             type="password"
             placeholder="Password"
-            width="size-5000"
             name="password"
             value={props.password}
             onChange={props.handleChangePassword}
@@ -65,7 +63,7 @@ const LoginForm = (props) => {
               <NavLink to="/recover_password"> Forgot Password?</NavLink>
             </Link>
           </Flex>
-          <Button variant="cta" type="submit" width="size-5000">
+          <Button variant="cta" type="submit">
             Login
           </Button>
         </Form>

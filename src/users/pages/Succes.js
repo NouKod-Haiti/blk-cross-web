@@ -10,7 +10,7 @@ const Succes = () => {
       height="100%"
       alignItems="center"
     >
-      <View width="size-6000" justifySelf="center">
+      <View justifySelf="center">
         <Header marginStart="size-800">
           <h1>REGISTRATION SUCCES</h1>
         </Header>
@@ -20,14 +20,13 @@ const Succes = () => {
         <Text marginStart="size-800">
           Your registration will be approved within 24 hours
         </Text>
-        <Image marginStart="size-800" width="size-5000" src="celebration.png" />
+        <Image marginStart="size-800" src="celebration.png" />
 
         <Button
           marginStart="size-800"
           variant="cta"
           id="signInButton"
           type="submit"
-          width="size-5000"
           // eslint-disable-next-line no-return-assign
           onPress={() => (window.location.href = '/')}
         >

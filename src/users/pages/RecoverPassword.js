@@ -19,7 +19,7 @@ const RecoverPassword = () => {
     // eslint-disable-next-line no-console
     console.log(data);
     window.location.href = '/send_password_reset';
-    //connect with API etc
+    // connect with API etc
   };
 
   return (
@@ -31,7 +31,7 @@ const RecoverPassword = () => {
         height="100%"
         alignItems="center"
       >
-        <View width="size-6000" justifySelf="center" marginTop="size-1600">
+        <View justifySelf="center" marginTop="size-1600">
           <Form
             onSubmit={handleSubmit}
             marginStart="single-line-height"
@@ -46,13 +46,12 @@ const RecoverPassword = () => {
               id="textfield"
               label="Enter your email, phone number or username."
               type="text"
-              width="size-5000"
               name="email"
               value={user}
               onChange={setUser}
             />
 
-            <Button variant="cta" type="submit" width="size-5000">
+            <Button variant="cta" type="submit">
               Search
             </Button>
           </Form>

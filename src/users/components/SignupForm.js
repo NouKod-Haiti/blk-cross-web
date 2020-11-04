@@ -21,7 +21,7 @@ const SignupForm = (props) => {
       height="100%"
       alignItems="center"
     >
-      <View width="size-6000" justifySelf="center" marginTop="size-400">
+      <View justifySelf="center" marginTop="size-400">
         <Header marginStart="size-2400">
           <h2>Sign Up</h2>
         </Header>
@@ -37,7 +37,6 @@ const SignupForm = (props) => {
             label="Name"
             type="text"
             placeholder="Name"
-            width="size-5000"
             name="name"
             value={props.name}
             onChange={props.handleChangeName}
@@ -49,7 +48,6 @@ const SignupForm = (props) => {
             label="Email"
             type="email"
             placeholder="Email"
-            width="size-5000"
             name="email"
             value={props.email}
             onChange={props.handleChangeEmail}
@@ -61,7 +59,6 @@ const SignupForm = (props) => {
             label="Password"
             type="password"
             placeholder="Password"
-            width="size-5000"
             name="password"
             value={props.password}
             onChange={props.handleChangePassword}
@@ -72,7 +69,6 @@ const SignupForm = (props) => {
             label="Organization"
             type="text"
             placeholder="Organization"
-            width="size-5000"
             name="organization"
             value={props.organization}
             onChange={props.handleChangeOrganization}
@@ -88,7 +84,7 @@ const SignupForm = (props) => {
             </Flex>
           </Flex>
 
-          <Button variant="cta" type="submit" width="size-5000">
+          <Button variant="cta" type="submit">
             Register
           </Button>
         </Form>

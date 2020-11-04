@@ -26,7 +26,7 @@ const SendPasswordReset = () => {
         height="100%"
         alignItems="center"
       >
-        <View width="size-6000" justifySelf="center" marginTop="size-1250">
+        <View justifySelf="center" marginTop="size-1250">
           <Form
             onSubmit={handleSubmit}
             marginStart="single-line-height"
@@ -45,7 +45,7 @@ const SendPasswordReset = () => {
               <Radio value="2">Email a confirmation code to ...</Radio>
             </RadioGroup>
 
-            <Button variant="cta" type="submit" width="size-5000">
+            <Button variant="cta" type="submit">
               Continue
             </Button>
 
