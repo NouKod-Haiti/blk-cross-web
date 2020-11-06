@@ -24,19 +24,9 @@ const RecoverPassword = () => {
 
   return (
     <>
-      <Flex
-        direction="column"
-        width="100%"
-        gap="size-100"
-        height="100%"
-        alignItems="center"
-      >
-        <View justifySelf="center" marginTop="size-1600">
-          <Form
-            onSubmit={handleSubmit}
-            marginStart="single-line-height"
-            marginBottom="size-100"
-          >
+      <Flex direction="column" width="100%" height="100%" alignItems="center">
+        <View>
+          <Form onSubmit={handleSubmit} >
             <Header>
               <h2>Find your Blk account</h2>
             </Header>

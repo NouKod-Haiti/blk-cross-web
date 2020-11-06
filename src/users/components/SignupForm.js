@@ -14,91 +14,84 @@ import { NavLink } from 'react-router-dom';
 
 const SignupForm = (props) => {
   return (
-    <Flex
-      direction="column"
-      width="100%"
-      gap="size-100"
-      height="100%"
-      alignItems="center"
-    >
-      <View justifySelf="center" marginTop="size-400">
-        <Header marginStart="size-2400">
-          <h2>Sign Up</h2>
-        </Header>
-
-        <Form
-          onSubmit={props.handleSubmit}
-          marginStart="single-line-height"
-          marginBottom="size-100"
+    <Flex direction="column" width="100%" height="100%">
+      <View paddingBottom="size-200">
+        <Flex
+          direction="column"
+          alignItems="center"
+          width="100%"
+          marginTop="size-200"
         >
-          <TextField
-            isRequired
-            id="textfield"
-            label="Name"
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={props.name}
-            onChange={props.handleChangeName}
-          />
+          <Header>
+            <h2>Sign up</h2>
+          </Header>
+          <View>
+            <Form onSubmit={props.handleSubmit}>
+              <TextField
+                isRequired
+                id="textfield"
+                label="Name"
+                type="text"
+                placeholder="Name"
+                name="name"
+                value={props.name}
+                onChange={props.handleChangeName}
+              />
 
-          <TextField
-            isRequired
-            id="textfield"
-            label="Email"
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={props.email}
-            onChange={props.handleChangeEmail}
-          />
+              <TextField
+                isRequired
+                id="textfield"
+                label="Email"
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={props.email}
+                onChange={props.handleChangeEmail}
+              />
 
-          <TextField
-            isRequired
-            id="textfield"
-            label="Password"
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={props.password}
-            onChange={props.handleChangePassword}
-          />
-          <TextField
-            isRequired
-            id="textfield"
-            label="Organization"
-            type="text"
-            placeholder="Organization"
-            name="organization"
-            value={props.organization}
-            onChange={props.handleChangeOrganization}
-          />
+              <TextField
+                isRequired
+                id="textfield"
+                label="Password"
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={props.password}
+                onChange={props.handleChangePassword}
+              />
+              <TextField
+                isRequired
+                id="textfield"
+                label="Organization"
+                type="text"
+                placeholder="Organization"
+                name="organization"
+                value={props.organization}
+                onChange={props.handleChangeOrganization}
+              />
+              <Flex direction="column">
+                <Text>Areas of impact you&apos;re interested in</Text>
+                <Flex direction="row">
+                  <Checkbox value="#">Exemple</Checkbox>
+                  <Checkbox value="#">Exemple</Checkbox>
+                  <Checkbox value="#">Exemple</Checkbox>
+                </Flex>
+              </Flex>
 
-          {/* checkbox part not implemented yet */}
-          <Flex direction="column" gap="size-100">
-            <Text>Areas of impact you&apos;re interested in</Text>
-            <Flex direction="row" gap="size-500">
-              <Checkbox value="#">Exemple</Checkbox>
-              <Checkbox value="#">Exemple</Checkbox>
-              <Checkbox value="#">Exemple</Checkbox>
-            </Flex>
+              <Button variant="cta" type="submit">
+                Register
+              </Button>
+            </Form>
+          </View>
+          <Flex direction="row" marginTop="size-100">
+            <Text>
+              Already have an account?
+              <Link isQuiet>
+                <NavLink to="/login"> Sign in</NavLink>
+              </Link>
+            </Text>
           </Flex>
-
-          <Button variant="cta" type="submit">
-            Register
-          </Button>
-        </Form>
-
-        <Flex direction="column">
-          <Text marginStart="size-1700">
-            Already have an account?
-            <Link isQuiet>
-              <NavLink to="/login"> Sign in</NavLink>
-            </Link>
-          </Text>
         </Flex>
-
-        {/* <Footer marginStart="size-1700" marginTop="size-100"> Copyright &copy; All rights reserved {new Date().getFullYear()}.</Footer> */}
       </View>
     </Flex>
   );

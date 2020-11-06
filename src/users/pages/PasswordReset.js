@@ -19,19 +19,9 @@ const SendPasswordReset = () => {
 
   return (
     <>
-      <Flex
-        direction="column"
-        width="100%"
-        gap="size-100"
-        height="100%"
-        alignItems="center"
-      >
-        <View justifySelf="center" marginTop="size-1250">
-          <Form
-            onSubmit={handleSubmit}
-            marginStart="single-line-height"
-            marginBottom="size-100"
-          >
+      <Flex direction="column" width="100%" height="100%" alignItems="center">
+        <View marginX="size-100">
+          <Form onSubmit={handleSubmit}>
             <Header>
               <h2>How do you want to reset your password?</h2>
             </Header>

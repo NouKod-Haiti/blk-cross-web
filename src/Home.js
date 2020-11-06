@@ -290,7 +290,6 @@ class Home extends PureComponent {
                   variant="cta"
                   // eslint-disable-next-line no-return-assign
                   onPress={() => (window.location.href = '/login')}
-                  id="signInButton"
                 >
                   Become an advocate
                 </Button>

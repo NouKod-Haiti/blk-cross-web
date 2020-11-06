@@ -7,12 +7,13 @@ import {
 } from 'react-router-dom';
 import { Provider, defaultTheme } from '@adobe/react-spectrum';
 import './App.css';
-import Login from './users/pages/Login';
-import Signup from './users/pages/Signup';
 import Succes from './users/pages/Succes';
 import RecoverPassword from './users/pages/RecoverPassword';
 import PasswordReset from './users/pages/PasswordReset';
 import Home from './Home';
+import Login from './users/pages/Login';
+import Signup from './users/pages/Signup';
+import Advocate from './Advocate';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact path="/send_password_reset">
               <PasswordReset />
+            </Route>
+            <Route exact path="/advocate">
+              <Advocate />
             </Route>
             {/* <Route path="/logout">
                 <Redirect to="/" />

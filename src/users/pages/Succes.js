@@ -3,27 +3,18 @@ import { Flex, Text, Image, Button, View, Header } from '@adobe/react-spectrum';
 
 const Succes = () => {
   return (
-    <Flex
-      direction="column"
-      width="100%"
-      gap="size-100"
-      height="100%"
-      alignItems="center"
-    >
-      <View justifySelf="center">
-        <Header marginStart="size-800">
+    <Flex direction="column" width="100%" height="100%" alignItems="center">
+      <View>
+        <Header>
           <h1>REGISTRATION SUCCES</h1>
         </Header>
-        <Header marginStart="size-800">
+        <Header>
           <h3>Thanks for registering!</h3>
         </Header>
-        <Text marginStart="size-800">
-          Your registration will be approved within 24 hours
-        </Text>
-        <Image marginStart="size-800" src="celebration.png" />
+        <Text>Your registration will be approved within 24 hours</Text>
+        <Image src="celebration.png" />
 
         <Button
-          marginStart="size-800"
           variant="cta"
           id="signInButton"
           type="submit"
