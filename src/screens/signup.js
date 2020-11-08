@@ -70,7 +70,7 @@ const styles = makeStyles((theme) => ({
     backgroundColor: '#333333',
     borderRadius: '50px',
     border: 1,
-    color: 'white',
+    color: '#F5F5F5',
   },
   haveAnAccount: {
     margin: 'auto',
@@ -86,122 +86,144 @@ const styles = makeStyles((theme) => ({
     paddingTop: 20,
     fontSize: 40,
     textAlign: 'center',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+  },
+  toolkitDescriptionWrapper: {
+    margin: '10px auto 10px auto',
+    fontSize: 23,
+    textAlign: 'center',
   },
 }));
 
 const signup = (props) => {
   const classes = styles();
   return (
-    <Grid container>
-      <Grid item sm={4} xs={12} className={classes.registrationText}>
-        <Text>Registration</Text>
-      </Grid>
-      <Grid item sm={4} xs={12}>
-        <div className={classes.signupWrapper}>
-          <Flex direction="column" width="100%" height="100%">
-            <div className={classes.logoImg}>logo</div>
-            <Text marginTop='size-100'>Register for you kits!</Text>
-          </Flex>
-          <ButtonLogo
-            className={classes.logoBtn}
-            onClick={() => alert('I was clicked')}
+    <>
+      <Grid container>
+        <Grid item sm />
+        <Grid item sm={6} xs={12} className={classes.toolkitDescriptionWrapper}>
+          <Text
+            paddingLeft="size-300"
+            className={classes.toolkitDescriptionText}
           >
-            <FontAwesomeIcon
-              icon={faFacebook}
-              size="5x"
-              color="white"
-              padding="-1"
-            />
-          </ButtonLogo>
-          <ButtonLogo
-            className={classes.logoBtn2}
-            onClick={() => alert('I was clicked')}
-          >
-            <FontAwesomeIcon icon={faGoogle} size="3x" color="#808080" />
-          </ButtonLogo>
-
-          <Flex direction="column" width="100%" height="100%">
-            <Text marginBottom="size-300">or</Text>
-            <View>
-              <Form noValidate onSubmit={props.handleSubmit}>
-                <TextField
-                  isRequired
-                  id="textField"
-                  label=""
-                  type="text"
-                  placeholder="Name*"
-                  name="name"
-                  value={props.name}
-                  onChange={props.handleChangeName}
-                  font-size="size-450"
-                  height="size-450"
-                />
-
-                <TextField
-                  isRequired
-                  id="textField"
-                  type="email"
-                  placeholder="Email*"
-                  name="email"
-                  value={props.email}
-                  height="size-450"
-                  onChange={props.handleChangeEmail}
-                />
-
-                <TextField
-                  isRequired
-                  id="textField"
-                  type="password"
-                  placeholder="Password*"
-                  name="password"
-                  value={props.password}
-                  height="size-450"
-                  onChange={props.handleChangePassword}
-                />
-                <TextField
-                  isRequired
-                  id="textField"
-                  type="text"
-                  placeholder="Name Of Organization"
-                  name="organization"
-                  value={props.organization}
-                  height="size-450"
-                  onChange={props.handleChangeOrganization}
-                />
-                <div className={classes.interest}>
-                  <Flex direction="column">
-                    <Text>Areas of impact you&apos;re interested in</Text>
-                    <div className={classes.exemple}>
-                      <Flex direction="column">
-                        <Checkbox value="#">Exemple</Checkbox>
-                        <Checkbox value="#">Exemple</Checkbox>
-                        <Checkbox value="#">Exemple</Checkbox>
-                      </Flex>
-                    </div>
-                  </Flex>
-                </div>
-
-                <ButtonRegister type="submit" className={classes.registerBtn}>
-                  Register
-                </ButtonRegister>
-              </Form>
-            </View>
-            <div className={classes.haveAnAccount}>
-              <Flex direction="row" marginTop="size-100">
-                <Text>
-                  Already have an account?
-                  <Link isQuiet>
-                    <NavLink to="/login"> Sign in</NavLink>
-                  </Link>
-                </Text>
-              </Flex>
-            </div>
-          </Flex>
-        </div>
+            {' '}
+            Toolkit download content ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+          </Text>
+        </Grid>
+        <Grid item sm />
       </Grid>
-      <Grid item sm />
-    </Grid>
+      <Grid container>
+        <Grid item sm={4} xs={12} className={classes.registrationText}>
+          <Text>Registration</Text>
+        </Grid>
+        <Grid item sm={4} xs={12}>
+          <div className={classes.signupWrapper}>
+            <Flex direction="column" width="100%" height="100%">
+              <div className={classes.logoImg}>logo</div>
+              <Text marginTop="size-100">Register for your kits!</Text>
+            </Flex>
+            <ButtonLogo
+              className={classes.logoBtn}
+              onClick={() => alert('I was clicked')}
+            >
+              <FontAwesomeIcon
+                icon={faFacebook}
+                size="5x"
+                color="white"
+                padding="-1"
+              />
+            </ButtonLogo>
+            <ButtonLogo
+              className={classes.logoBtn2}
+              onClick={() => alert('I was clicked')}
+            >
+              <FontAwesomeIcon icon={faGoogle} size="3x" color="#808080" />
+            </ButtonLogo>
+
+            <Flex direction="column" width="100%" height="100%">
+              <Text marginBottom="size-300">or</Text>
+              <View>
+                <Form noValidate onSubmit={props.handleSubmit}>
+                  <TextField
+                    isRequired
+                    id="textField"
+                    label=""
+                    type="text"
+                    placeholder="Name*"
+                    name="name"
+                    value={props.name}
+                    onChange={props.handleChangeName}
+                    font-size="size-450"
+                    height="size-450"
+                  />
+
+                  <TextField
+                    isRequired
+                    id="textField"
+                    type="email"
+                    placeholder="Email*"
+                    name="email"
+                    value={props.email}
+                    height="size-450"
+                    onChange={props.handleChangeEmail}
+                  />
+
+                  <TextField
+                    isRequired
+                    id="textField"
+                    type="password"
+                    placeholder="Password*"
+                    name="password"
+                    value={props.password}
+                    height="size-450"
+                    onChange={props.handleChangePassword}
+                  />
+                  <TextField
+                    isRequired
+                    id="textField"
+                    type="text"
+                    placeholder="Name Of Organization"
+                    name="organization"
+                    value={props.organization}
+                    height="size-450"
+                    onChange={props.handleChangeOrganization}
+                  />
+                  <div className={classes.interest}>
+                    <Flex direction="column">
+                      <Text>Areas of impact you&apos;re interested in</Text>
+                      <div className={classes.exemple}>
+                        <Flex direction="column">
+                          <Checkbox value="#">Exemple</Checkbox>
+                          <Checkbox value="#">Exemple</Checkbox>
+                          <Checkbox value="#">Exemple</Checkbox>
+                        </Flex>
+                      </div>
+                    </Flex>
+                  </div>
+
+                  <ButtonRegister type="submit" className={classes.registerBtn}>
+                    Register
+                  </ButtonRegister>
+                </Form>
+              </View>
+              <div className={classes.haveAnAccount}>
+                <Flex direction="row" marginTop="size-100">
+                  <Text>
+                    Already have an account?
+                    <Link isQuiet>
+                      <NavLink to="/login"> Sign in</NavLink>
+                    </Link>
+                  </Text>
+                </Flex>
+              </div>
+            </Flex>
+          </div>
+        </Grid>
+        <Grid item sm />
+      </Grid>
+    </>
   );
 };
 
