@@ -1,36 +1,34 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider, defaultTheme } from '@adobe/react-spectrum';
 import './App.css';
 import Succes from './users/pages/Succes';
 import RecoverPassword from './users/pages/RecoverPassword';
 import PasswordReset from './users/pages/PasswordReset';
 import Home from './Home';
-import Login from './users/pages/Login';
-import Signup from './users/pages/Signup';
 import Advocate from './Advocate';
+
+
+// Screens
+import signup from './screens/signup';
+import login from './screens/login';
 
 function App() {
   return (
-    <div className="App">
-      <Provider theme={defaultTheme} height="100%" id="provider">
-        <Router>
+    <Provider theme={defaultTheme} height="100%" id="provider">
+      <Router>
+        <div className="container">
           <Switch>
-            <Route exact path="/">
+            {/* <Route exact path="/">
               <Home />
-            </Route>
-            <Route exact path="/login">
+            </Route> */}
+            {/* <Route exact path="/login">
               <Login />
-            </Route>
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-            <Route exact path="/success">
+            </Route> */}
+            <Route exact path="/signup" component={signup} />
+            <Route exact path="/login" component={login} />
+
+            {/* <Route exact path="/success">
               <Succes />
             </Route>
             <Route exact path="/recover_password">
@@ -41,17 +39,17 @@ function App() {
             </Route>
             <Route exact path="/advocate">
               <Advocate />
-            </Route>
+            </Route> */}
             {/* <Route path="/logout">
                 <Redirect to="/" />
             </Route> */}
-            <Route path="*">
+            {/* <Route path="*">
               <Redirect to="/" />
-            </Route>
+            </Route> */}
           </Switch>
-        </Router>
-      </Provider>
-    </div>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
