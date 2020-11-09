@@ -1,73 +1,47 @@
-import React,{PureComponent} from 'react';
-import SignupForm from "../screens/signup";
+import React, { useState } from 'react';
+import SignupForm from '../screens/signup';
 
+function Signup() {
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    password: '',
+    organization: '',
+  });
 
-export default class Signup extends PureComponent{
-
-    constructor(){
-        super()
-        this.state = {
-            email:'',
-            password:'',
-            name:'',
-            organization:''
-        }
-    }
-
-    //those functions are used as callback on the SIGN UP form
-    handleChangeEmail = (newMail) => {
-        this.setState({
-          email: newMail
-        });
-     }
-  
-     handleChangePassword = (newPass) => {
-      this.setState({
-        password: newPass
-      });
-   }
-
-    handleChangeName = (newName) => {
-        this.setState({
-        name: newName
-        });
-    }
-    
-
-    handleChangeOrganization= (newOG) => {
-        this.setState({
-          organization: newOG
-        });
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const data = {
-            email: this.state.email,
-            password: this.state.password,
-            name: this.state.name,
-            organization: this.state.organization
-            }
-            console.log(data);
-            window.location.href="/success";
-            //connect with API etc...
-    }
-
-    render(){
-        return(
-            <>
-                <SignupForm  
-                email={this.state.email} 
-                password={this.state.password}
-                name={this.state.name}
-                organization={this.state.organization}
-                handleChangeEmail={this.handleChangeEmail}
-                handleChangePassword={this.handleChangePassword}
-                handleChangeName={this.handleChangeName}
-                handleChangeOrganization={this.handleChangeOrganization}
-                handleSubmit = {this.handleSubmit}
-                />
-            </>
-        )
-    }
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+      email: state.email,
+      password: state.password,
+      name: state.name,
+      organization: state.organization,
+    };
+    console.log(data);
+    window.location.href = '/success';
+    //connect with API etc...
+  };
+  return (
+    <>
+      <SignupForm
+        name={state.name}
+        handleChangeName={handleChange}
+        email={state.email}
+        handleChangeEmail={handleChange}
+        password={state.password}
+        handleChangePassword={handleChange}
+        organization={state.organization}
+        handleChangeOrganization={handleChange}
+        handleSubmit={handleSubmit}
+      />
+    </>
+  );
 }
+
+export default Signup;
