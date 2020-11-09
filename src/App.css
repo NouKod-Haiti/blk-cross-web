@@ -21,3 +21,7 @@ a {
   border-color: #808080;
   border-width: 2px;
 }
+
+.nav-container {
+  margin: auto;
+}
