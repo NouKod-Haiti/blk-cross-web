@@ -109,12 +109,15 @@ const styles = makeStyles((theme) => ({
     marginTop: '1%',
     width: '48%',
   },
+  registrationWrapper: {
+    marginTop: "10%"
+  }
 }));
 
 const login = (props) => {
   const classes = styles();
   return (
-    <Grid container>
+    <Grid container className={classes.registrationWrapper}>
       <Grid item sm={4} xs={12} className={classes.registrationText}>
         <Text>Sign in</Text>
       </Grid>
@@ -143,7 +146,7 @@ const login = (props) => {
           </ButtonLogo>
 
           <Flex direction="column" width="100%" height="100%">
-            <Text marginBottom="size-300">or</Text>
+            <Text marginBottom="size-200">or</Text>
             <View>
               <Form noValidate onSubmit={props.handleSubmit}>
                 <TextField
