@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .App {
   height: 100%;
   width: 100%;
@@ -18,4 +19,32 @@
 
 #textfield{
   border-radius: 50px;
+=======
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: rgb(245, 245, 245);
+}
+.container {
+  margin: 80px auto 0 auto;
+  max-width: 1400px;
+}
+a {
+  text-decoration: none;
+}
+
+#textField{
+  border-radius: 50px; 
+  height: 30;
+  margin: "30px";
+  background-color: #F5F5F5;
+  border-color: #808080;
+  border-width: 2px;
+}
+
+.nav-container {
+  margin: auto;
+>>>>>>> 7ee4e650b8e2cb5d9c461ea38f51c809338e4dbe
 }
