@@ -16,9 +16,9 @@ import themeObject from './util/theme';
 import Navbar from './components/layout/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Succes from './components/Succes';
-import RecoverPassword from './components/RecoverPassword';
-import PasswordReset from './components/PasswordReset';
+import Succes from './screens/Succes';
+import RecoverPassword from './screens/recoverPassword';
+import PasswordReset from './screens/passwordReset';
 
 // Screens
 import publicPage from './screens/publicPage';
