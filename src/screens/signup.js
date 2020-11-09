@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Theme from '../util/theme';
 
 // React Spectrum Stuff
 import {
@@ -27,6 +28,7 @@ const styles = makeStyles(() => ({
     padding: '25px 10px 20px 10px',
     textAlign: 'center',
     borderRadius: '2%',
+    marginBottom: 30
   },
   form: {
     textAlign: 'center',
@@ -89,6 +91,14 @@ const styles = makeStyles(() => ({
     fontSize: 23,
     textAlign: 'center',
   },
+  inputField: {
+    color: Theme.palette.secondary.main,
+    paddingLeft: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    outline: 'none',
+  },
+
 }));
 
 const signup = (props) => {
@@ -138,11 +148,11 @@ const signup = (props) => {
               <FontAwesomeIcon icon={faGoogle} size="3x" color="#808080" />
             </ButtonLogo>
 
-            <Flex direction="column" width="100%" height="100%">
+            <Flex direction="column" width="96%" height="100%">
               <Text marginBottom="size-100">or</Text>
               <View>
                 <Form noValidate onSubmit={props.handleSubmit}>
-                  <TextField
+                  <input
                     isRequired
                     id="textField"
                     label=""
@@ -153,9 +163,10 @@ const signup = (props) => {
                     onChange={props.handleChangeName}
                     font-size="size-450"
                     height="size-450"
+                    className={classes.inputField}
                   />
 
-                  <TextField
+                  <input
                     isRequired
                     id="textField"
                     type="email"
@@ -164,9 +175,10 @@ const signup = (props) => {
                     value={props.email}
                     height="size-450"
                     onChange={props.handleChangeEmail}
+                    className={classes.inputField}
                   />
 
-                  <TextField
+                  <input
                     isRequired
                     id="textField"
                     type="password"
@@ -175,8 +187,9 @@ const signup = (props) => {
                     value={props.password}
                     height="size-450"
                     onChange={props.handleChangePassword}
+                    className={classes.inputField}
                   />
-                  <TextField
+                  <input
                     isRequired
                     id="textField"
                     type="text"
@@ -185,6 +198,7 @@ const signup = (props) => {
                     value={props.organization}
                     height="size-450"
                     onChange={props.handleChangeOrganization}
+                    className={classes.inputField}
                   />
                   <div className={classes.interest}>
                     <Flex direction="column">

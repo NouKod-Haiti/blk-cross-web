@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Theme from '../util/theme';
 
 // React Spectrum Stuff
 import {
@@ -110,8 +111,15 @@ const styles = makeStyles((theme) => ({
     width: '48%',
   },
   registrationWrapper: {
-    marginTop: "10%"
-  }
+    marginTop: '10%',
+  },
+  inputField: {
+    color: Theme.palette.secondary.main,
+    paddingLeft: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    outline: 'none',
+  },
 }));
 
 const login = (props) => {
@@ -145,11 +153,11 @@ const login = (props) => {
             <FontAwesomeIcon icon={faGoogle} size="3x" color="#808080" />
           </ButtonLogo>
 
-          <Flex direction="column" width="100%" height="100%">
+          <Flex direction="column" width="96%" height="100%">
             <Text marginBottom="size-200">or</Text>
             <View>
               <Form noValidate onSubmit={props.handleSubmit}>
-                <TextField
+                <input
                   isRequired
                   id="textField"
                   type="email"
@@ -158,9 +166,10 @@ const login = (props) => {
                   value={props.email}
                   height="size-450"
                   onChange={props.handleChangeEmail}
+                  className={classes.inputField}
                 />
 
-                <TextField
+                <input
                   isRequired
                   id="textField"
                   type="password"
@@ -169,6 +178,7 @@ const login = (props) => {
                   value={props.password}
                   height="size-450"
                   onChange={props.handleChangePassword}
+                  className={classes.inputField}
                 />
 
                 <div
