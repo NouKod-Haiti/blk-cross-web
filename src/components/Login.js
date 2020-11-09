@@ -1,50 +1,45 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import LoginForm from '../screens/login';
-export default class Login extends PureComponent {
-  constructor() {
-    super();
 
-    this.state = {
-      email: '',
-      password: '',
+function Login() {
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    password: '',
+    organization: '',
+  });
+
+
+
+   const handleChange = (e) => {
+     setState({
+       ...state,
+       [e.target.name]: e.target.value,
+     });
+   };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const data = {
+        email: state.email,
+        password: state.password,
+      };
+      console.log(data);
+      window.location.href = '/success';
+      //connect with API etc...
     };
-  }
 
-  //those functions are used as callback on the SIGN IN form
-  handleChangeEmail = (newMail) => {
-    this.setState({
-      email: newMail,
-    });
-  };
-
-  handleChangePassword = (newPass) => {
-    this.setState({
-      password: newPass,
-    });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const data = {
-      email: this.state.email,
-      password: this.state.password,
-    };
-    console.log(data);
-    window.location.href = '/success';
-    //connect with API etc
-  };
-
-  render() {
+ 
     return (
       <>
         <LoginForm
-          email={this.state.email}
-          password={this.state.password}
-          handleChangeEmail={this.handleChangeEmail}
-          handleChangePassword={this.handleChangePassword}
-          handleSubmit={this.handleSubmit}
+          email={state.email}
+          password={state.password}
+          handleChangeEmail={handleChange}
+          handleChangePassword={handleChange}
+          handleSubmit={handleSubmit}
         />
       </>
     );
-  }
-}
+};
+
+export default Login;
