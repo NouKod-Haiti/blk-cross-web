@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Advocate from './Advocate';
+import advocate from './screens/advocate';
 
 // React Spectrum Stuff
 import { Provider, defaultTheme } from '@adobe/react-spectrum';
@@ -41,7 +41,7 @@ function App() {
             <Route exact path="/login" component={Login} />
 
             <Route exact path="/success" component={Succes} />
-            <Succes />
+            
 
             <Route exact path="/recover-password" component={RecoverPassword} />
 
@@ -51,7 +51,7 @@ function App() {
               component={PasswordReset}
             />
 
-            <Route exact path="/advocate" component={Advocate} />
+            <Route exact path="/advocate" component={advocate} />
 
             {/* <Route path="/logout">
                 <Redirect to="/" />
