@@ -23,6 +23,7 @@ import PasswordReset from './screens/passwordReset';
 // Screens
 import publicPage from './screens/publicPage';
 
+
 const theme = createMuiTheme(themeObject);
 function App() {
   return (
