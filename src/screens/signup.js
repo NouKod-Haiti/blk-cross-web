@@ -16,15 +16,11 @@ import { NavLink } from 'react-router-dom';
 
 // MUI Stuff
 import Grid from '@material-ui/core/Grid';
-import withStyles from '@material-ui/core/styles/withStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonLogo from '@material-ui/core/Button';
 import ButtonRegister from '@material-ui/core/Button';
 
-const styles = makeStyles((theme) => ({
-  // ...theme.palette.primary,
-  // ...theme.palette.secondary,
-
+const styles = makeStyles(() => ({
   signupWrapper: {
     boxShadow: '0 0 10px 0 rgba(0,0,0,.4)',
     border: '1px solid #BFBFBF',
@@ -143,7 +139,7 @@ const signup = (props) => {
             </ButtonLogo>
 
             <Flex direction="column" width="100%" height="100%">
-              <Text marginBottom="size-300">or</Text>
+              <Text marginBottom="size-100">or</Text>
               <View>
                 <Form noValidate onSubmit={props.handleSubmit}>
                   <TextField
@@ -227,4 +223,4 @@ const signup = (props) => {
   );
 };
 
-export default withStyles(styles)(signup);
+export default signup;
