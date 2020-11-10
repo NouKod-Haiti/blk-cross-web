@@ -142,7 +142,7 @@ const publicPage = () => {
                   <b>Help spread the word</b>
                 </Header>
                 <Text>
-                  Copy description ipsum ipsum ipsum ipsum ipsum ipsum.
+                  Copy description ipsum ipsum ipsum iprum ipsum ipsum.
                 </Text>
               </View>
             </Grid>
