@@ -6,7 +6,6 @@ import Theme from '../util/theme';
 // React Spectrum Stuff
 import {
   Form,
-  TextField,
   Checkbox,
   Link,
   Text,
@@ -68,7 +67,7 @@ const styles = makeStyles((theme) => ({
     marginLeft: 20,
   },
   signInBtn: {
-    backgroundColor: '#333333',
+    backgroundColor: Theme.palette.primary.main,
     borderRadius: '50px',
     border: 1,
     color: '#F5F5F5',
