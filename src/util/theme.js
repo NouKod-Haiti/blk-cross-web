@@ -10,7 +10,7 @@ export default {
       dark: '#808B95',
       lightGrey: '#ABB2B9',
       lighter: '#C4C4C4',
-      lightest: '#EAECEE',
+      lightest: '#F1F1F1',
     },
   },
   typography: {
@@ -19,13 +19,4 @@ export default {
   form: {
     textAlign: 'center',
   },
-  // image: {
-  //   margin: '20px auto 20px auto',
-  // },
-  // pageTitle: {
-  //   margin: '10px auto 10px auto',
-  // },
-  // textField: {
-  //   margin: '10px auto 10px auto',
-  // },
 };
