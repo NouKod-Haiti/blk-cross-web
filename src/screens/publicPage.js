@@ -98,6 +98,14 @@ const styles = makeStyles((theme) => ({
     textAlign: 'center',
     width: '100%',
   },
+  mainImage: {
+    backgroundColor: 'red',
+    width: '100%',
+    height: '380px',
+    marginBottom: 20,
+    marginTop: -14,
+    backgroundColor: Theme.palette.secondary.lighter,
+  },
 }));
 
 const publicPage = () => {
@@ -106,6 +114,10 @@ const publicPage = () => {
     <>
       <Flex direction="column" width="100%" height="100%">
         <View paddingBottom="size-200">
+          <View>
+            <div className={classes.mainImage}>Image place holder</div>
+          </View>
+
           <Flex direction="column" alignItems="center">
             <Header>
               <h2>Fulton County Covid-19 Outreach</h2>
@@ -288,12 +300,15 @@ const publicPage = () => {
                 </Text>
               </View>
             </Grid>
-            <Grid container item xs={12} spacing={4} className={classes.mediaGroup}>
+            <Grid
+              container
+              item
+              xs={12}
+              spacing={4}
+              className={classes.mediaGroup}
+            >
               <Grid item sm={4} xs={12}>
-                <View
-                  height="size-2000"
-                  marginBottom="size-1000"
-                >
+                <View height="size-2000" marginBottom="size-1000">
                   <ReactPlayer
                     url="#"
                     controls
@@ -307,10 +322,7 @@ const publicPage = () => {
                 </View>
               </Grid>
               <Grid item sm={4} xs={12}>
-                <View
-                  height="size-2000"
-                  marginBottom="size-1000"
-                >
+                <View height="size-2000" marginBottom="size-1000">
                   <ReactPlayer
                     url="#"
                     controls
@@ -324,10 +336,7 @@ const publicPage = () => {
                 </View>
               </Grid>
               <Grid item sm={4} xs={12}>
-                <View
-                  height="size-2000"
-                  marginBottom="size-1000"
-                >
+                <View height="size-2000" marginBottom="size-1000">
                   <ReactPlayer
                     url="#"
                     controls
