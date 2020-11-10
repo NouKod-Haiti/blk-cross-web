@@ -17,12 +17,12 @@ import Navbar from './components/layout/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Succes from './screens/succes';
+import Footer from './components/layout/Footer';
 import RecoverPassword from './screens/recoverPassword';
 import PasswordReset from './screens/passwordReset';
 
 // Screens
 import publicPage from './screens/publicPage';
-
 
 const theme = createMuiTheme(themeObject);
 function App() {
@@ -59,6 +59,7 @@ function App() {
             </Route> */}
           </Switch>
         </div>
+        <Footer />
       </Router>
     </Provider>
   );

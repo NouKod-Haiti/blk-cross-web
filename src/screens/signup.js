@@ -13,6 +13,8 @@ import {
   View,
   Flex,
 } from '@adobe/react-spectrum';
+import { Footer } from '@adobe/react-spectrum';
+
 import { NavLink } from 'react-router-dom';
 
 // MUI Stuff
@@ -28,7 +30,8 @@ const styles = makeStyles(() => ({
     padding: '25px 10px 20px 10px',
     textAlign: 'center',
     borderRadius: '2%',
-    marginBottom: 30
+    marginBottom: 30,
+    paddingLeft: 27,
   },
   form: {
     textAlign: 'center',
@@ -41,7 +44,7 @@ const styles = makeStyles(() => ({
     color: '#4B4B4B',
   },
   logoBtn: {
-    margin: 12,
+    // margin: 12,
     borderRadius: '50%',
     cursor: 'pointer',
     backgroundColor: 'blue',
@@ -49,7 +52,7 @@ const styles = makeStyles(() => ({
     width: '1px',
   },
   logoBtn2: {
-    margin: 12,
+    margin: 18,
     borderRadius: '50%',
     cursor: 'pointer',
     backgroundColor: 'white',
@@ -69,6 +72,7 @@ const styles = makeStyles(() => ({
     borderRadius: '50px',
     border: 1,
     color: '#F5F5F5',
+    marginLeft: 10,
   },
   haveAnAccount: {
     margin: 'auto',
@@ -78,7 +82,8 @@ const styles = makeStyles(() => ({
     backgroundColor: '#C4C4C4',
     width: '40%',
     height: 90,
-    margin: 'auto',
+    marginLeft: '30%',
+    marginRigt: '30%',
   },
   registrationText: {
     paddingTop: 20,
@@ -98,7 +103,6 @@ const styles = makeStyles(() => ({
     paddingBottom: 10,
     outline: 'none',
   },
-
 }));
 
 const signup = (props) => {
@@ -148,8 +152,9 @@ const signup = (props) => {
               <FontAwesomeIcon icon={faGoogle} size="3x" color="#808080" />
             </ButtonLogo>
 
-            <Flex direction="column" width="96%" height="100%">
-              <Text marginBottom="size-100">or</Text>
+            <Flex direction="column" width="90%" height="100%">
+              <div style={{ marginLeft: '6%', marginBottom: '2%' }}>or</div>
+              {/* <Text marginBottom="size-100">or</Text> */}
               <View>
                 <Form noValidate onSubmit={props.handleSubmit}>
                   <input

@@ -17,24 +17,24 @@ import { NavLink } from 'react-router-dom';
 
 // MUI Stuff
 import Grid from '@material-ui/core/Grid';
-import withStyles from '@material-ui/core/styles/withStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonLogo from '@material-ui/core/Button';
 import ButtonSignin from '@material-ui/core/Button';
 
 const styles = makeStyles((theme) => ({
-  // ...theme.palette.primary,
-  // ...theme.palette.secondary,
-
-  signupWrapper: {
+  signinWrapper: {
     boxShadow: '0 0 10px 0 rgba(0,0,0,.4)',
     border: '1px solid #BFBFBF',
     padding: '25px 10px 20px 10px',
     textAlign: 'center',
     borderRadius: '2%',
+    marginBottom: '31.5%',
+    marginTop: 30,
+    paddingLeft: 27,
   },
   form: {
     textAlign: 'center',
+    backgroundColor: 'red',
   },
 
   formInput: {
@@ -44,7 +44,7 @@ const styles = makeStyles((theme) => ({
     color: '#4B4B4B',
   },
   logoBtn: {
-    margin: 12,
+    // margin: 12,
     borderRadius: '50%',
     cursor: 'pointer',
     backgroundColor: 'blue',
@@ -52,7 +52,7 @@ const styles = makeStyles((theme) => ({
     width: '1px',
   },
   logoBtn2: {
-    margin: 12,
+    margin: 18,
     borderRadius: '50%',
     cursor: 'pointer',
     backgroundColor: 'white',
@@ -72,6 +72,7 @@ const styles = makeStyles((theme) => ({
     borderRadius: '50px',
     border: 1,
     color: '#F5F5F5',
+    marginLeft: 10,
   },
   dontHaveAnAccount: {
     margin: 'auto auto 20px auto',
@@ -81,9 +82,10 @@ const styles = makeStyles((theme) => ({
     backgroundColor: '#C4C4C4',
     width: '40%',
     height: 90,
-    margin: 'auto',
+    marginLeft: '30%',
+    marginRigt: '30%',
   },
-  registrationText: {
+  loginText: {
     paddingTop: 20,
     fontSize: 40,
     textAlign: 'center',
@@ -106,18 +108,18 @@ const styles = makeStyles((theme) => ({
   },
   forgetPassword: {
     textAlign: 'right',
-    marginRight: '2%',
+    marginRight: '-2%',
     marginTop: '1%',
     width: '48%',
   },
-  registrationWrapper: {
+  logginWrapper: {
     marginTop: '10%',
   },
   inputField: {
     color: Theme.palette.secondary.main,
     paddingLeft: 10,
     paddingTop: 10,
-    paddingBottom: 10,
+    paddingBottom: 15,
     outline: 'none',
   },
 }));
@@ -125,12 +127,12 @@ const styles = makeStyles((theme) => ({
 const login = (props) => {
   const classes = styles();
   return (
-    <Grid container className={classes.registrationWrapper}>
-      <Grid item sm={4} xs={12} className={classes.registrationText}>
+    <Grid container className={classes.logginWrapper}>
+      <Grid item sm={4} xs={12} className={classes.loginText}>
         <Text>Sign in</Text>
       </Grid>
       <Grid item sm={4} xs={12}>
-        <div className={classes.signupWrapper}>
+        <div className={classes.signinWrapper}>
           <Flex direction="column" width="100%" height="100%">
             <div className={classes.logoImg}>logo</div>
             <Text marginTop="size-100">Sign in to view your kits!</Text>
@@ -143,7 +145,6 @@ const login = (props) => {
               icon={faFacebook}
               size="5x"
               color="white"
-              padding="-1"
             />
           </ButtonLogo>
           <ButtonLogo
@@ -153,8 +154,8 @@ const login = (props) => {
             <FontAwesomeIcon icon={faGoogle} size="3x" color="#808080" />
           </ButtonLogo>
 
-          <Flex direction="column" width="96%" height="100%">
-            <Text marginBottom="size-200">or</Text>
+          <Flex direction="column" width="90%" height="100%">
+            <div style={{ marginLeft: '6%', marginBottom: '2%'}}>or</div>
             <View>
               <Form noValidate onSubmit={props.handleSubmit}>
                 <input
