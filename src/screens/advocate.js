@@ -10,7 +10,7 @@ import {
   TextArea,
   Form,
 } from '@adobe/react-spectrum';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -18,28 +18,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import ShareIcon from '@material-ui/icons/Share';
 import GetAppIcon from '@material-ui/icons/GetApp';
-import { makeStyles } from '@material-ui/core/styles';
 
-const styles = makeStyles({
-  elem1:{
-    float: 'left'
-  },
-  elem2:{
-    float:'right'
-  },
-});
+
 const advocate = () => {
-    const classes = styles();
     return (
       <Flex direction="column" width="100%" height="100%">
-        {/* <View
-          marginTop="size-100"
-          borderWidth="thin"
-          borderColor="static-black"
-          marginBottom="size-300"
-        >
-          <ExitToAppIcon />
-        </View> */}
         <View paddingBottom="size-200">
           <Flex direction="column" marginTop="size-100">
             <View marginBottom="size-200" padding="2%">

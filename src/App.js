@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import advocate from './screens/advocate';
 
 // React Spectrum Stuff
 import { Provider, defaultTheme } from '@adobe/react-spectrum';
@@ -16,12 +15,15 @@ import themeObject from './util/theme';
 import Navbar from './components/layout/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Succes from './screens/succes';
-import RecoverPassword from './screens/recoverPassword';
-import PasswordReset from './screens/passwordReset';
+
 
 // Screens
 import publicPage from './screens/publicPage';
+import advocate from './screens/advocate';
+import Succes from './screens/succes';
+import RecoverPassword from './screens/recoverPassword';
+import PasswordReset from './screens/passwordReset';
+import admin from './screens/admin';
 
 const theme = createMuiTheme(themeObject);
 function App() {
@@ -37,6 +39,7 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path="/" component={publicPage} />
+            <Route expact path="/admin" component={admin} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/success" component={Succes} />
