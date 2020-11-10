@@ -1,39 +1,7 @@
-<<<<<<< HEAD
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
-import { Provider, defaultTheme } from "@adobe/react-spectrum";
-import LoginForm from "./components/LoginForm";
-import SignupForm from "./components/SignupForm";
-import Succes from "./components/Succes";
-import RecoverPassword from "./components/RecoverPassword";
-import SendPasswordReset from "./components/SendPassordReset";
-
-function App() {
-  return (
-    <div className="App">
-      <Provider id="provider" theme={defaultTheme} height="100%">
-        <Router>
-          <>
-            <Switch>
-              <Route exact path="/" component={LoginForm} />
-              <Route path="/signup" component={SignupForm} />
-              <Route path="/success" component={Succes} />
-              <Route path="/recover_password" component={RecoverPassword} />
-              <Route
-                path="/send_password_reset"
-                component={SendPasswordReset}
-              />
-            </Switch>
-          </>
-        </Router>
-      </Provider>
-    </div>
-=======
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Advocate from './Advocate';
+import advocate from './screens/advocate';
 
 // React Spectrum Stuff
 import { Provider, defaultTheme } from '@adobe/react-spectrum';
@@ -71,19 +39,10 @@ function App() {
             <Route exact path="/" component={publicPage} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
-
             <Route exact path="/success" component={Succes} />
-            <Succes />
-
             <Route exact path="/recover-password" component={RecoverPassword} />
-
-            <Route
-              exact
-              path="/send-password-reset"
-              component={PasswordReset}
-            />
-
-            <Route exact path="/advocate" component={Advocate} />
+            <Route exact path="/send-password-reset" component={PasswordReset} />
+            <Route exact path="/advocate" component={advocate} />
 
             {/* <Route path="/logout">
                 <Redirect to="/" />
@@ -92,7 +51,6 @@ function App() {
         </div>
       </Router>
     </Provider>
->>>>>>> 7ee4e650b8e2cb5d9c461ea38f51c809338e4dbe
   );
 }
 

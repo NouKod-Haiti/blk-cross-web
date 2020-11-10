@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-.App {
-  height: 100%;
-  width: 100%;
-}
-
-#signInButton{
-  background-color: black;
-  color: white;
-}
-
-#view{
-  display: inline-block;
-}
-
-#provider{
-  background-color: white;
-}
-
-#textfield{
-  border-radius: 50px;
-=======
 html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -37,7 +15,15 @@ a {
 
 #textField{
   border-radius: 50px; 
-  height: 30;
+  height: 30px;
+  margin: "30px";
+  background-color: #F5F5F5;
+  border-color: #808080;
+  border-width: 2px;
+}
+#textArea{
+  border-radius: 10px; 
+  height: 50px;
   margin: "30px";
   background-color: #F5F5F5;
   border-color: #808080;
@@ -46,5 +32,6 @@ a {
 
 .nav-container {
   margin: auto;
->>>>>>> 7ee4e650b8e2cb5d9c461ea38f51c809338e4dbe
 }
+
+
