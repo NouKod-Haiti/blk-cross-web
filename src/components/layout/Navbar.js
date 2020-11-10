@@ -46,7 +46,7 @@ const Navbar = () => {
   );
 };
 Navbar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  // classes: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

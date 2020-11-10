@@ -1,10 +1,11 @@
-import { Button, Flex, Text, View } from '@adobe/react-spectrum';
-import React, { FC } from 'react';
-import { Footer } from '@adobe/react-spectrum';
-
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 import Theme from '../../util/theme';
 
+//React Spetrum Stuff
+import { Text, View } from '@adobe/react-spectrum';
+
+//MUI Suff
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 const styles = makeStyles(() => ({
@@ -64,46 +65,6 @@ const FooterBar = () => {
       </Grid>
     </Grid>
   );
-
-  // <div
-  //   areas={['header  header', 'sidebar content', 'footer  footer']}
-  //   rows={['size-1000', 'auto', 'size-1200']}
-  //   className={classes.footerWrapper}
-  // >
-  //   <Footer
-  //     // direction="column"
-  //     alignItems="left"
-  //     margin="size-150"
-  //     gap="size-25"
-  //   >
-  //     <div className={classes.footeRow}>
-  //       <div>
-  //         <Grid>
-  //           <View direction="column" marginTop="size-550">
-  //             {' '}
-  //             <View>
-  //               <Text>Check footer requirements with 508</Text>
-  //             </View>
-  //             <View>
-  //               <Text>Contact Info</Text>
-  //             </View>
-  //             <View>
-  //               <Text>Contact Info</Text>
-  //             </View>
-  //           </View>
-  //         </Grid>
-  //       </div>
-  //       <div className={classes.mediaGroup}>
-  //         <div direction="row" marginTop="size-550">
-  //           {' '}
-  //           <div className={classes.mediaWrapper}></div>
-  //           <div className={classes.mediaWrapper}></div>
-  //           <div className={classes.mediaWrapper}></div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </Footer>
-  // </div>
 };
 
 export default FooterBar;
