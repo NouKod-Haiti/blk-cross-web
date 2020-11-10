@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-
+import advocate from './screens/advocate';
 
 // React Spectrum Stuff
 import { Provider, defaultTheme } from '@adobe/react-spectrum';
@@ -40,17 +40,10 @@ function App() {
             <Route exact path="/" component={publicPage} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
-
             <Route exact path="/success" component={Succes} />
-            <Succes />
-
             <Route exact path="/recover-password" component={RecoverPassword} />
-
-            <Route
-              exact
-              path="/send-password-reset"
-              component={PasswordReset}
-            />
+            <Route exact path="/send-password-reset" component={PasswordReset} />
+            <Route exact path="/advocate" component={advocate} />
 
             {/* <Route path="/logout">
                 <Redirect to="/" />

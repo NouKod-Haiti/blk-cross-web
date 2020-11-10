@@ -445,7 +445,8 @@ const publicPage = () => {
                   <Grid item sm={6} xs={12}>
                     <ButtonAdvocate
                       className={classes.advocateBtn}
-                      onCLick={() => (window.location.href = '/login')}
+                      //TODO: link will be changed
+                      onClick={() => (window.location.href = '/advocate')}
                     >
                       Become an advocate
                     </ButtonAdvocate>
