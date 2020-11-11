@@ -23,7 +23,7 @@ import advocate from './screens/advocate';
 import Succes from './screens/succes';
 import RecoverPassword from './screens/recoverPassword';
 import PasswordReset from './screens/passwordReset';
-import admin from './screens/admin';
+import Admin from './screens/Admin';
 
 const theme = createMuiTheme(themeObject);
 function App() {
@@ -39,7 +39,7 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path="/" component={publicPage} />
-            <Route expact path="/admin" component={admin} />
+            <Route expact path="/admin" component={Admin} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/success" component={Succes} />
