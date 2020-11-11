@@ -117,8 +117,8 @@ const styles = makeStyles((theme) => ({
   inputField: {
     color: Theme.palette.secondary.main,
     paddingLeft: 10,
-    paddingTop: 10,
-    paddingBottom: 15,
+    paddingTop: 5,
+    paddingBottom: 5,
     outline: 'none',
   },
 }));

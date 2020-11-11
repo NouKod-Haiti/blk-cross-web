@@ -43,7 +43,6 @@ const styles = makeStyles(() => ({
     color: '#4B4B4B',
   },
   logoBtn: {
-    // margin: 12,
     borderRadius: '50%',
     cursor: 'pointer',
     backgroundColor: 'blue',
@@ -98,8 +97,8 @@ const styles = makeStyles(() => ({
   inputField: {
     color: Theme.palette.secondary.main,
     paddingLeft: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
     outline: 'none',
   },
 }));
