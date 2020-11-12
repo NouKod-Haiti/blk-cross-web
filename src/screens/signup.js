@@ -195,6 +195,17 @@ const signup = (props) => {
                   <input
                     isRequired
                     id="textField"
+                    type="password"
+                    placeholder="Password Confirmation*"
+                    name="passwordConfirmation"
+                    value={props.passwordConfirmation}
+                    height="size-450"
+                    onChange={props.handleChangePasswordConfirmation}
+                    className={classes.inputField}
+                  />
+                  <input
+                    isRequired
+                    id="textField"
                     type="text"
                     placeholder="Name Of Organization"
                     name="organization"
