@@ -1,11 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+import CheckButton from 'react-validation/build/button';
 import Theme from '../util/theme';
 
 // React Spectrum Stuff
 import {
-  Form,
   Checkbox,
   Link,
   Text,
@@ -72,6 +74,7 @@ const styles = makeStyles((theme) => ({
     border: 1,
     color: '#F5F5F5',
     marginLeft: 10,
+    width: '100%',
   },
   dontHaveAnAccount: {
     margin: 'auto auto 20px auto',
@@ -120,6 +123,8 @@ const styles = makeStyles((theme) => ({
     paddingTop: 5,
     paddingBottom: 5,
     outline: 'none',
+    width: '100%',
+    marginBottom: 10,
   },
 }));
 
