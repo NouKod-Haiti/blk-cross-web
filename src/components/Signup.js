@@ -124,40 +124,12 @@ function Signup() {
       )
         .then(() => {
           setSuccessful(true);
-          // window.location.href = '/success';
+          window.location.href = '/success';
         })
         .catch(() => {
           setSuccessful(false);
         });
     }
-
-    // const data = {
-    //   name: state.name,
-    //   email: state.email,
-    //   password: state.password,
-    //   passwordConfirmation: state.passwordConfirmation,
-    //   organization: state.organization,
-    // };
-    // console.log(data);
-    //  console.log(process.env.REACT_APP_KEY);
-    //  console.log('api:', process.env.REACT_APP_API);
-    // axios
-    //   .post(process.env.REACT_APP_API + '/users/signup', state, {
-    //     headers: {
-    //       'X-BLK-CROSS-KEY': process.env.REACT_APP_KEY,
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //     },
-    //   })
-    //   .then(function (data) {
-    //     console.log(data);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-
-    // window.location.href = '/success';
-    //connect with API etc...
   };
   
   return (
@@ -175,7 +147,7 @@ function Signup() {
           passwordValidation={[required, vpassword]}
           handleChangePassword={handleChange}
           PasswordConfirmation={state.passwordConfirmation}
-          passwordConfirmationValidation={[required, vpasswordConfirmation]}
+          // passwordConfirmationValidation={[required]}
           handleChangePasswordConfirmation={handleChange}
           organization={state.organization}
           organizationValidation={[required, vorganization]}
