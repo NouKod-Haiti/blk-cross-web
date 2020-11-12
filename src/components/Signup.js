@@ -8,6 +8,20 @@ import { isEmail } from 'validator';
 
 import { register } from '../actions/auth';
 
+// MUI Stuff
+import { makeStyles } from '@material-ui/core/styles';
+
+const styles = makeStyles(() => ({
+  errorMessage: {
+    color: 'red',
+    marginTop: -10,
+    marginBottom: 5,
+    fontSize: 10,
+    // backgroundColor: 'green',
+    textAlign: 'left',
+    marginLeft: 20,
+  },
+}));
 
 
 function Signup() {
@@ -22,11 +36,12 @@ function Signup() {
   const form = useRef();
   const checkBtn = useRef();
    const dispatch = useDispatch();
+  const classes = styles();
 
    const required = (value) => {
      if (!value) {
        return (
-         <div>
+         <div className={classes.errorMessage}>
            This field is required!
          </div>
        );
@@ -36,7 +51,7 @@ function Signup() {
    const validEmail = (value) => {
      if (!isEmail(value)) {
        return (
-         <div>
+         <div className={classes.errorMessage}>
            This is not a valid email.
          </div>
        );
@@ -46,18 +61,18 @@ function Signup() {
    const vname = (value) => {
      if (value.length < 3 || value.length > 40) {
        return (
-         <div>
-           The username must be between 3 and 40 characters.
+         <div className={classes.errorMessage}>
+           name must be between 3 and 40 characters.
          </div>
        );
      }
    };
 
    const vpassword = (value) => {
-     if (value.length < 6 || value.length > 40) {
+     if (value.length < 8 || value.length > 40) {
        return (
-         <div>
-           The password must be between 6 and 40 characters.
+         <div className={classes.errorMessage}>
+           password must be between 8 and 40 characters.
          </div>
        );
      }
@@ -66,8 +81,8 @@ function Signup() {
    const vpasswordConfirmation = (value) => {
      if (value !== vpassword) {
        return (
-         <div>
-           Should match the password above.
+         <div className={classes.errorMessage}>
+           password does not match.
          </div>
        );
      }
@@ -160,10 +175,7 @@ function Signup() {
           passwordValidation={[required, vpassword]}
           handleChangePassword={handleChange}
           PasswordConfirmation={state.passwordConfirmation}
-          passwordVapasswordConfirmationValidationlidation={[
-            required,
-            vpasswordConfirmation,
-          ]}
+          passwordConfirmationValidation={[required, vpasswordConfirmation]}
           handleChangePasswordConfirmation={handleChange}
           organization={state.organization}
           organizationValidation={[required, vorganization]}
