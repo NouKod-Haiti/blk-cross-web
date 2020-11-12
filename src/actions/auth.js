@@ -9,23 +9,8 @@ import {
 
 import AuthService from '../services/auth.service';
 
-export const register = (
-  name,
-  email,
-  password,
-  passwordConfirmation,
-  organization
-) => (dispatch) => {
-  return AuthService.register(
-    { name, email, password, passwordConfirmation, organization },
-    {
-      headers: {
-        'X-BLK-CROSS-KEY': process.env.REACT_APP_KEY,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    }
-  ).then(
+export const register = (data) => (dispatch) => {
+  return AuthService.register(data).then(
     (response) => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -69,8 +54,7 @@ export const login = (email, password) => (dispatch) => {
       });
 
       return Promise.resolve();
-    },
-    (error) => {
+    }).catch((error) => {
       const message =
         (error.response &&
           error.response.data &&
