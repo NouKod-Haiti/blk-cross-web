@@ -5,7 +5,6 @@ import Theme from '../util/theme';
 
 // React Spectrum Stuff
 import {
-  Form,
   Checkbox,
   Link,
   Text,
@@ -15,6 +14,10 @@ import {
 import { Footer } from '@adobe/react-spectrum';
 
 import { NavLink } from 'react-router-dom';
+
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+import CheckButton from 'react-validation/build/button';
 
 // MUI Stuff
 import Grid from '@material-ui/core/Grid';
@@ -71,6 +74,7 @@ const styles = makeStyles(() => ({
     border: 1,
     color: '#F5F5F5',
     marginLeft: 10,
+    width: '100%'
   },
   haveAnAccount: {
     margin: 'auto',
@@ -100,10 +104,13 @@ const styles = makeStyles(() => ({
     paddingTop: 5,
     paddingBottom: 5,
     outline: 'none',
+    width: '100%',
+    marginBottom: 10
   },
 }));
 
 const signup = (props) => {
+  
   const classes = styles();
   return (
     <>
@@ -152,10 +159,13 @@ const signup = (props) => {
 
             <Flex direction="column" width="90%" height="100%">
               <div style={{ marginLeft: '6%', marginBottom: '2%' }}>or</div>
-              {/* <Text marginBottom="size-100">or</Text> */}
               <View>
-                <Form noValidate onSubmit={props.handleSubmit}>
-                  <input
+                <Form
+                  noValidate
+                  onSubmit={props.handleSubmit}
+                  ref={props.refForm}
+                >
+                  <Input
                     isRequired
                     id="textField"
                     label=""
@@ -167,9 +177,10 @@ const signup = (props) => {
                     font-size="size-450"
                     height="size-450"
                     className={classes.inputField}
+                    validations={props.nameValidation}
                   />
 
-                  <input
+                  <Input
                     isRequired
                     id="textField"
                     type="email"
@@ -179,9 +190,10 @@ const signup = (props) => {
                     height="size-450"
                     onChange={props.handleChangeEmail}
                     className={classes.inputField}
+                    validations={props.emailValidation}
                   />
 
-                  <input
+                  <Input
                     isRequired
                     id="textField"
                     type="password"
@@ -191,8 +203,9 @@ const signup = (props) => {
                     height="size-450"
                     onChange={props.handleChangePassword}
                     className={classes.inputField}
+                    validations={props.passwordValidation}
                   />
-                  <input
+                  <Input
                     isRequired
                     id="textField"
                     type="password"
@@ -202,8 +215,9 @@ const signup = (props) => {
                     height="size-450"
                     onChange={props.handleChangePasswordConfirmation}
                     className={classes.inputField}
+                    validations={props.passwordConfirmationValidation}
                   />
-                  <input
+                  <Input
                     isRequired
                     id="textField"
                     type="text"
@@ -213,6 +227,7 @@ const signup = (props) => {
                     height="size-450"
                     onChange={props.handleChangeOrganization}
                     className={classes.inputField}
+                    validations={props.organizationValidation}
                   />
                   <div className={classes.interest}>
                     <Flex direction="column">
@@ -230,6 +245,10 @@ const signup = (props) => {
                   <ButtonRegister type="submit" className={classes.registerBtn}>
                     Register
                   </ButtonRegister>
+                  <CheckButton
+                    style={{ display: 'none' }}
+                    ref={props.checkButton}
+                  />
                 </Form>
               </View>
               <div className={classes.haveAnAccount}>
