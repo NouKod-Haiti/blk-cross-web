@@ -1,23 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import Theme from '../util/theme';
-
-// React Spectrum Stuff
-import {
-  Checkbox,
-  Link,
-  Text,
-  View,
-  Flex,
-} from '@adobe/react-spectrum';
-import { Footer } from '@adobe/react-spectrum';
-
-import { NavLink } from 'react-router-dom';
-
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
 import CheckButton from 'react-validation/build/button';
+import Theme from '../util/theme';
+
+// React Spectrum Stuff
+import { Checkbox, Link, Text, View, Flex } from '@adobe/react-spectrum';
+import { NavLink } from 'react-router-dom';
+
 
 // MUI Stuff
 import Grid from '@material-ui/core/Grid';
@@ -49,9 +41,11 @@ const styles = makeStyles(() => ({
     borderRadius: '50%',
     cursor: 'pointer',
     backgroundColor: 'blue',
-    height: 60,
-    width: '1px',
+    height: '60px',
+    width: '10%',
+    position: 'relative',
   },
+
   logoBtn2: {
     margin: 18,
     borderRadius: '50%',
@@ -61,6 +55,7 @@ const styles = makeStyles(() => ({
     width: '1px',
     padding: 35,
   },
+  // img: { marginTop: -10 },
   interest: {
     textAlign: 'left',
     marginLeft: 5,
@@ -74,7 +69,7 @@ const styles = makeStyles(() => ({
     border: 1,
     color: '#F5F5F5',
     marginLeft: 10,
-    width: '100%'
+    width: '100%',
   },
   haveAnAccount: {
     margin: 'auto',
@@ -105,12 +100,11 @@ const styles = makeStyles(() => ({
     paddingBottom: 5,
     outline: 'none',
     width: '100%',
-    marginBottom: 10
+    marginBottom: 10,
   },
 }));
 
 const signup = (props) => {
-  
   const classes = styles();
   return (
     <>
@@ -148,6 +142,7 @@ const signup = (props) => {
                 size="5x"
                 color="white"
                 padding="-1"
+                className={classes.img}
               />
             </ButtonLogo>
             <ButtonLogo
