@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 // import axios from 'axios';
 import SignupForm from '../screens/signup';
 
-
 import { useDispatch, useSelector } from 'react-redux';
 import { isEmail } from 'validator';
 
@@ -23,7 +22,6 @@ const styles = makeStyles(() => ({
   },
 }));
 
-
 function Signup() {
   const [state, setState] = useState({
     name: '',
@@ -35,68 +33,58 @@ function Signup() {
   const [successful, setSuccessful] = useState(false);
   const form = useRef();
   const checkBtn = useRef();
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const classes = styles();
 
-   const required = (value) => {
-     if (!value) {
-       return (
-         <div className={classes.errorMessage}>
-           This field is required!
-         </div>
-       );
-     }
-   };
+  const required = (value) => {
+    if (!value) {
+      return (
+        <div className={classes.errorMessage}>This field is required!</div>
+      );
+    }
+  };
 
-   const validEmail = (value) => {
-     if (!isEmail(value)) {
-       return (
-         <div className={classes.errorMessage}>
-           This is not a valid email.
-         </div>
-       );
-     }
-   };
+  const validEmail = (value) => {
+    if (!isEmail(value)) {
+      return (
+        <div className={classes.errorMessage}>This is not a valid email.</div>
+      );
+    }
+  };
 
-   const vname = (value) => {
-     if (value.length < 3 || value.length > 40) {
-       return (
-         <div className={classes.errorMessage}>
-           name must be between 3 and 40 characters.
-         </div>
-       );
-     }
-   };
+  const vname = (value) => {
+    if (value.length < 3 || value.length > 40) {
+      return (
+        <div className={classes.errorMessage}>
+          name must be between 3 and 40 characters.
+        </div>
+      );
+    }
+  };
 
-   const vpassword = (value) => {
-     if (value.length < 8 || value.length > 40) {
-       return (
-         <div className={classes.errorMessage}>
-           password must be between 8 and 40 characters.
-         </div>
-       );
-     }
-   };
+  const vpassword = (value) => {
+    if (value.length < 8 || value.length > 40) {
+      return (
+        <div className={classes.errorMessage}>
+          password must be between 8 and 40 characters.
+        </div>
+      );
+    }
+  };
 
-   const vpasswordConfirmation = (value) => {
-     if (value !== vpassword) {
-       return (
-         <div className={classes.errorMessage}>
-           password does not match.
-         </div>
-       );
-     }
-   };
+  const vpasswordConfirmation = (vpassword) => {
+    return (
+      !vpassword && (
+        <div className={classes.errorMessage}>password does not match.</div>
+      )
+    );
+  };
 
-   const vorganization = (value) => {
-     if (value.length < 6 || value.length > 50) {
-       return (
-         <div>
-           The password must be between 6 and 40 characters.
-         </div>
-       );
-     }
-   }
+  const vorganization = (value) => {
+    if (value.length < 6 || value.length > 50) {
+      return <div>The password must be between 6 and 40 characters.</div>;
+    }
+  };
 
   const handleChange = (e) => {
     setState({
@@ -119,9 +107,7 @@ function Signup() {
     };
     console.log(data);
     if (checkBtn.current.context._errors.length === 0) {
-      dispatch(
-        register(data)  
-      )
+      dispatch(register(data))
         .then(() => {
           setSuccessful(true);
           window.location.href = '/success';
@@ -131,7 +117,7 @@ function Signup() {
         });
     }
   };
-  
+
   return (
     <>
       {!successful && (
@@ -146,9 +132,9 @@ function Signup() {
           password={state.password}
           passwordValidation={[required, vpassword]}
           handleChangePassword={handleChange}
-          PasswordConfirmation={state.passwordConfirmation}
-          // passwordConfirmationValidation={[required]}
+          passwordConfirmation={state.passwordConfirmation}
           handleChangePasswordConfirmation={handleChange}
+          passwordConfirmationValidation={[required, vpasswordConfirmation]}
           organization={state.organization}
           organizationValidation={[required, vorganization]}
           handleChangeOrganization={handleChange}
