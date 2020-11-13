@@ -25,9 +25,9 @@ const styles = makeStyles(() => ({
     display: 'column',
   },
   thankYou: {
-    // backgroundColor: 'red',
     marginTop: '15%',
     textAlign: 'center',
+    marginBottom: '40%',
   },
   returnBtn: {
     backgroundColor: Theme.palette.primary.main,
