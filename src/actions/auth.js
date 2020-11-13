@@ -45,14 +45,14 @@ export const register = (data) => (dispatch) => {
   );
 };
 
-export const login = (email, password) => (dispatch) => {
-  return AuthService.login(email, password).then(
+export const login = (data) => (dispatch) => {
+  return AuthService.login(data).then(
     (data) => {
       dispatch({
         type: LOGIN_SUCCESS,
         payload: { user: data },
       });
-
+      console.log('my data::::', data)
       return Promise.resolve();
     }).catch((error) => {
       const message =
