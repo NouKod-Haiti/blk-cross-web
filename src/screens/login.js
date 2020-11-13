@@ -145,11 +145,7 @@ const login = (props) => {
             className={classes.logoBtn}
             onClick={() => alert('I was clicked')}
           >
-            <FontAwesomeIcon
-              icon={faFacebook}
-              size="5x"
-              color="white"
-            />
+            <FontAwesomeIcon icon={faFacebook} size="5x" color="white" />
           </ButtonLogo>
           <ButtonLogo
             className={classes.logoBtn2}
@@ -159,10 +155,14 @@ const login = (props) => {
           </ButtonLogo>
 
           <Flex direction="column" width="90%" height="100%">
-            <div style={{ marginLeft: '6%', marginBottom: '2%'}}>or</div>
+            <div style={{ marginLeft: '6%', marginBottom: '2%' }}>or</div>
             <View>
-              <Form noValidate onSubmit={props.handleSubmit}>
-                <input
+              <Form
+                noValidate
+                onSubmit={props.handleSubmit}
+                ref={props.refForm}
+              >
+                <Input
                   isRequired
                   id="textField"
                   type="email"
@@ -172,9 +172,10 @@ const login = (props) => {
                   height="size-450"
                   onChange={props.handleChangeEmail}
                   className={classes.inputField}
+                  validations={props.emailValidation}
                 />
 
-                <input
+                <Input
                   isRequired
                   id="textField"
                   type="password"
@@ -184,6 +185,7 @@ const login = (props) => {
                   height="size-450"
                   onChange={props.handleChangePassword}
                   className={classes.inputField}
+                  validations={props.passwordValidation}
                 />
 
                 <div
@@ -204,9 +206,23 @@ const login = (props) => {
                   </div>
                 </div>
 
+                {/* <button
+                  className="btn btn-primary btn-block"
+                  disabled={props.loading}
+                >
+                  {props.loading && (
+                    <span className="spinner-border spinner-border-sm"></span>
+                  )}
+                  <span>Login</span>
+                </button> */}
+
                 <ButtonSignin type="submit" className={classes.signInBtn}>
                   Sign In
                 </ButtonSignin>
+                <CheckButton
+                  style={{ display: 'none' }}
+                  ref={props.checkButton}
+                />
               </Form>
             </View>
             <div className={classes.dontHaveAnAccount}>
